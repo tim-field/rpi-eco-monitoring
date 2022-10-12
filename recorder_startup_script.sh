@@ -66,7 +66,7 @@ if [ ! -f $config_file ]; then
 fi
 
 # export the raspberry pi serial number to an environment variable
-export PI_ID=$(python discover_serial.py)
+export PI_ID=$(python2 discover_serial.py)
 
 # the file in which to store to store the logging from this run
 logdir='logs'
@@ -74,4 +74,4 @@ logfile_name="rpi_eco_"$PI_ID"_"$currentDate".log"
 
 # Start recording script
 printf 'End of startup script\n'
-sudo -E python -u python_record.py $config_file $logfile_name $logdir
+sudo -E python2 -u python_record.py $config_file $logfile_name $logdir
